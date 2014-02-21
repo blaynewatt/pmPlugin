@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.ge.pmplugin"
+      version="0.1.0">
+    <name>pmPlugin</name>
+    <description>Cordova Helper Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,GE,helper</keywords>
+ 
+    <js-module src="www/pmplugin.js" name="pmPlugin">
+        <clobbers target="window.pmPlugin" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="pmPlugin">
+                <param name="android-package" value="com.ge.pmplugin.pmPlugin"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/pmplugin.java" target-dir="src/com/ge/pmplugin" />      
+     </platform>          
+</plugin>
