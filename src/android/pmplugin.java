@@ -1,11 +1,13 @@
 package com.ge.pmplugin;
  
+import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import android.content.pm.PackageManager;
+import android.content.Context;
 
 public class pmPlugin extends CordovaPlugin
 {
@@ -19,7 +21,7 @@ public class pmPlugin extends CordovaPlugin
 			if (action.equals("hasFeature"))
 			{
 				String feature = arg_object.getString("feature");
-				if (pm.hasSystemFeature(PackageManager[feature])) //.FEATURE_CAMERA)) 
+				if (pm.hasSystemFeature(PackageManager.FEATURE_CAMERA))
 				{
 					callbackContext.success();
 					return true;
