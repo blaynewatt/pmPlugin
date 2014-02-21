@@ -16,7 +16,7 @@ public class pmPlugin extends CordovaPlugin
 		JSONObject arg_object = args.getJSONObject(0);
 		try 
 		{
-			if (ACTION_CHECK_FEATURE.equals("hasFeature"))
+			if (action.equals("hasFeature"))
 			{
 				String feature = arg_object.getString("feature");
 				if (pm.hasSystemFeature(PackageManager[feature])) //.FEATURE_CAMERA)) 
